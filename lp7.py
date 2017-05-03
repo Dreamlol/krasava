@@ -25,7 +25,11 @@ class Student(object):
         return self.exam    
     
     def is_certified(self):
-        su = sum(self.labs)
+        #al = (((self.di['lab_num']*self.di['lab_max'])+self.di['exam_max']))
+        su = float(sum(self.labs)+self.exam)
+        
+        
+        return (su, (su/100) >= self.di['k'])
     
 dictionary = {
 'exam_max': 30,
